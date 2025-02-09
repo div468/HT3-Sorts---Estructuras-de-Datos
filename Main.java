@@ -13,6 +13,7 @@ public class Main {
         Sorts sorts = new Sorts();
         
         int[] arr = sorts.generador(10, 500);
+        System.out.println("Ordenamiento con insertion sort:");
         sorts.insertionSort(arr);
         sorts.printA(arr);
 
