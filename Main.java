@@ -17,6 +17,10 @@ public class Main {
         sorts.insertionSort(arr);
         sorts.printA(arr);
 
+        System.out.println("Ordenamiento con selction sort:");
+        sorts.selectionSort(arr);
+        sorts.printA(arr);
+
 
     }
 }
