@@ -21,6 +21,16 @@ public class Main {
         sorts.selectionSort(arr);
         sorts.printA(arr);
 
+        System.out.println("Ordenamiento con Quick Sort:");
+        int[] arrQuick = arr.clone();
+        sorts.quickSort(arrQuick);
+        sorts.printA(arrQuick);
+
+        System.out.println("Ordenamiento con Radix Sort:");
+        int[] arrRadix = arr.clone();
+        sorts.radixSort(arrRadix);
+        sorts.printA(arrRadix);
+
 
     }
 }
