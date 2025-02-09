@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         Sorts sorts = new Sorts();
         
-        int[] arr = sorts.generador(10, 500);
+        Integer[] arr = sorts.generador(10, 500);
         System.out.println("Ordenamiento con insertion sort:");
         sorts.insertionSort(arr);
         sorts.printA(arr);
@@ -22,12 +22,12 @@ public class Main {
         sorts.printA(arr);
 
         System.out.println("Ordenamiento con Quick Sort:");
-        int[] arrQuick = arr.clone();
+        Integer[] arrQuick = arr.clone();
         sorts.quickSort(arrQuick);
         sorts.printA(arrQuick);
 
         System.out.println("Ordenamiento con Radix Sort:");
-        int[] arrRadix = arr.clone();
+        Integer[] arrRadix = arr.clone();
         sorts.radixSort(arrRadix);
         sorts.printA(arrRadix);
 
