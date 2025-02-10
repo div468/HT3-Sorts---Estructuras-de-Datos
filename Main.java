@@ -11,26 +11,42 @@
 public class Main {
     public static void main(String[] args) {
         Sorts sorts = new Sorts();
-        
-        Integer[] arr = sorts.generador(10, 500);
-        System.out.println("Ordenamiento con insertion sort:");
-        sorts.insertionSort(arr);
-        sorts.printA(arr);
 
-        System.out.println("Ordenamiento con selction sort:");
-        sorts.selectionSort(arr);
-        sorts.printA(arr);
+        // Generar un array de 3000 números aleatorios
+        Integer[] originalArray = sorts.generador(3000, 5000);
 
-        System.out.println("Ordenamiento con Quick Sort:");
-        Integer[] arrQuick = arr.clone();
-        sorts.quickSort(arrQuick);
-        sorts.printA(arrQuick);
+        System.out.println("\n--- Profiling de algoritmos de ordenamiento ---\n");
 
-        System.out.println("Ordenamiento con Radix Sort:");
-        Integer[] arrRadix = arr.clone();
-        sorts.radixSort(arrRadix);
-        sorts.printA(arrRadix);
+        // Insertion Sort
+        {
+            Integer[] arr = originalArray.clone();
+            long timeInsertion = Profiler.measureTime(() -> sorts.insertionSort(arr));
+            long memoryInsertion = Profiler.measureMemory(() -> sorts.insertionSort(arr));
+            System.out.println("Insertion Sort: Tiempo = " + timeInsertion / 1_000_000 + " ms, Memoria = " + memoryInsertion / 1024 + " KB");
+        }
 
+        // Selection Sort
+        {
+            Integer[] arr = originalArray.clone();
+            long timeSelection = Profiler.measureTime(() -> sorts.selectionSort(arr));
+            long memorySelection = Profiler.measureMemory(() -> sorts.selectionSort(arr));
+            System.out.println("Selection Sort: Tiempo = " + timeSelection / 1_000_000 + " ms, Memoria = " + memorySelection / 1024 + " KB");
+        }
 
+        // Quick Sort
+        {
+            Integer[] arr = originalArray.clone();
+            long timeQuick = Profiler.measureTime(() -> sorts.quickSort(arr));
+            long memoryQuick = Profiler.measureMemory(() -> sorts.quickSort(arr));
+            System.out.println("Quick Sort: Tiempo = " + timeQuick / 1_000_000 + " ms, Memoria = " + memoryQuick / 1024 + " KB");
+        }
+
+        // Radix Sort
+        {
+            Integer[] arr = originalArray.clone();
+            long timeRadix = Profiler.measureTime(() -> sorts.radixSort(arr));
+            long memoryRadix = Profiler.measureMemory(() -> sorts.radixSort(arr));
+            System.out.println("Radix Sort: Tiempo = " + timeRadix / 1_000_000 + " ms, Memoria = " + memoryRadix / 1024 + " KB");
+        }
     }
 }
