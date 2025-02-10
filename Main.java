@@ -6,9 +6,16 @@
  * Creación: 08/02/2025
  * última modificación: -
  * File Name: Main.java
- * Descripción: clase main para ejecutar el ordenamiento de los 3000 números.
+ * Descripción: Clase main para ejecutar el ordenamiento de los 3000 números.
  */
-public class Main {
+
+ public class Main {
+    /**
+     * Método principal que ejecuta la generación de un arreglo de 3000 números aleatorios
+     * y perfila el rendimiento (tiempo y memoria) de diferentes algoritmos de ordenamiento.
+     * 
+     * @param args Argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         Sorts sorts = new Sorts();
 
